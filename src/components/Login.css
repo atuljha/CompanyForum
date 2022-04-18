@@ -1,0 +1,23 @@
+body {
+    --twitter-color: #50b7f5;
+    --twitter-background: #e6ecf0;
+    
+  }
+
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    display: flex;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
