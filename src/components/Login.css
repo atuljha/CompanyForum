@@ -1,23 +1,78 @@
 body {
-    --twitter-color: #50b7f5;
-    --twitter-background: #e6ecf0;
-    
-  }
-
+  --twitter-color: #50b7f5;
+  --twitter-background: #e6ecf0;
+}
 
 .login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: #252d34; */
+  height: 100vh;
+}
+
+.signup input {
+  margin-top: 2px;
+  margin-bottom: 20px;
+}
+
+.signup_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: black; */
+  height: 70%;
+  width: 60%;
+}
+
+.signup_final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  border-radius: 25px;
+  background-color: #e6ecf0;
+  width: 60%;
+}
+
+.login_div {
+  /* background-color: black; */
+  background-color: #e6ecf0;
+
+  height: 70%;
+  width: 60%;
+  margin-top: 50px;
+  border-radius: 25px;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input {
-    display: flex;
-    width: 300px;
-    height: 30px;
-    border-radius: 5px;
-    margin-bottom: 30px;
+  display: flex;
+  width: 300px;
+  height: 30px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  margin: auto;
+  padding: 10px;
+  margin-top: 40px;
+  border: 2px solid green;
+}
+.login_form {
+  height: 100%;
+}
+
+.login_button {
+  border: 2px sold white;
+  color: white;
+}
+
+h2 {
+  color: green;
 }
