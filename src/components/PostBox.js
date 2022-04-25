@@ -9,7 +9,7 @@ function PostBox(props) {
 
   const sendPost = (e) => {
     e.preventDefault();
-    PostService.createPost(postMessage,localStorage.getItem("name"), localStorage.getItem("id"))
+    PostService.createPost(postMessage,localStorage.getItem("name"), localStorage.getItem("id"), postImage)
     .then(()=> {
       setPostMessage("");
       setPostImage("");

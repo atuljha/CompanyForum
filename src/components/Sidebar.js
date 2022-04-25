@@ -11,19 +11,22 @@ import ListAltIcon from "@material-ui/icons/ListAlt";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Button } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
+
+  const navigate = useNavigate()
   return (
     <div className="sidebar">
       <MailRounded className="sidebar__twitterIcon" />
 
       <SidebarOption active Icon={HomeIcon} text="Home" />
       <SidebarOption Icon={SearchIcon} text="Explore" />
+      <SidebarOption Icon={PermIdentityIcon} text="Profile" onClick={()=>navigate("/profile")} />
       <SidebarOption Icon={NotificationsNoneIcon} text="Notifications" />
       <SidebarOption Icon={MailOutlineIcon} text="Messages" />
-      <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" />
+      <SidebarOption Icon={BookmarkBorderIcon} text="Games" onClick={()=>navigate("/games")} />
       <SidebarOption Icon={ListAltIcon} text="Lists" />
-      <SidebarOption Icon={PermIdentityIcon} text="Profile" />
       <SidebarOption Icon={MoreHorizIcon} text="More" />
 
       {/* Button -> Tweet */}
