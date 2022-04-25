@@ -1,10 +1,38 @@
 import React from "react";
 import "./Profile.css";
 import { Button } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
+import PostService from "../services/PostService";
+import Post from "./Post";
+import FlipMove from "react-flip-move";
 
 const Profile = () => {
+
+  const[posts, setPosts] = React.useState([])
+
+  const[deletePost, setDelete] = React.useState(false)
+
+  function deletePostId(id){
+    PostService.deletePost(id)
+    setDelete(true)
+  }
+
+  
+
+  React.useEffect(() => {
+    localStorage.getItem("id");
+    PostService.getAllPostsForUser(localStorage.getItem("id"))
+    .then(res=>setPosts(res.data)) 
+
+    setDelete(false)
+  }, [deletePost]);
+  const navigate = useNavigate();
   return (
     <div className='profile_container'>
+      <h2 
+      onClick={()=> navigate("/home")}
+      className="back"
+       >Back</h2>
       <h2 className='profile_header'>Profile</h2>
       <div className='profile_images'>
         <img
@@ -33,7 +61,7 @@ const Profile = () => {
         </div>
       </div>
       <div className='profile_details'>
-        <h3 className='profile_text_common profile_user_name'>User Name</h3>
+        <h3 className='profile_text_common profile_user_name'>{localStorage.getItem("name")}</h3>
         <span className='profile_handle_name'>@TwitterHandle</span>
         <span className='profile_description'>
           This is my profile description
@@ -50,7 +78,20 @@ const Profile = () => {
             &#128467; Dec 2017
           </span>
         </div>
+
       </div>
+      <FlipMove>
+        {posts.map((post) => (
+          <Post
+            key={post.id}
+            post={post}
+            verified={true}
+            isDelete ={true}
+            deletePost ={()=>deletePostId(post.id)}
+            
+          />
+        ))}
+      </FlipMove>
     </div>
   );
 };

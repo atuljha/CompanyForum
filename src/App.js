@@ -14,6 +14,7 @@ export default function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/home' element={<Home />} />
         <Route path='/profile' element={<Profile />} />
+      
       </Routes>
     </Router>
   );
